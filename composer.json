@@ -1,0 +1,7 @@
+{
+  "name": "yabong-api",
+  "description": "Yabong PHP API",
+  "require": {
+    "php": "^8.1"
+  }
+}
