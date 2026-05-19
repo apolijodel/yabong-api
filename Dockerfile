@@ -7,11 +7,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Disable all MPMs first
-RUN a2dismod mpm_event || true
-RUN a2dismod mpm_worker || true
+# REMOVE all MPM modules
+RUN rm -f /etc/apache2/mods-enabled/mpm_*.load
+RUN rm -f /etc/apache2/mods-enabled/mpm_*.conf
 
-# Enable only prefork
+# ENABLE ONLY prefork
 RUN a2enmod mpm_prefork
 
 COPY . /var/www/html/
