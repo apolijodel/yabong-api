@@ -3,7 +3,7 @@
 define('DB_HOST', $_ENV['MYSQLHOST']);
 define('DB_USER', $_ENV['MYSQLUSER']);
 define('DB_PASS', $_ENV['MYSQLPASSWORD']);
-define('DB_NAME', $_ENV['MYSQLDATABASE']);
+define('DB_NAME', $_ENV['APP_DB_NAME']);
 define('DB_PORT', $_ENV['MYSQLPORT']);
 
 function getDB() {
