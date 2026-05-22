@@ -55,7 +55,7 @@ if (!move_uploaded_file($file['tmp_name'], $dest)) {
     exit;
 }
 
-$url  = 'http://localhost/yabong-api/uploads/avatars/' . $filename;
+$url  = 'https://yabong-api-production.up.railway.app/uploads/avatars/' . $filename;
 $stmt = $db->prepare("UPDATE admins SET profile_image = ? WHERE id = ?");
 $stmt->bind_param('si', $url, $adminId);
 $stmt->execute();
